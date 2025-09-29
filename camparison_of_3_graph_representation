@@ -1,0 +1,3 @@
+1.adjacency matrix: when checking two nodes connected or not 
+2.adjacency list: when all the connected nodes  and total number of connected node from  one node required 
+3.edge list :when just edge required   
