@@ -2,25 +2,25 @@
 using namespace std;
 
 
-void bfs(int src,vector<int> adj_list[],int node){
-    bool visited[node];
+void bfs(int src,vector<int> adj_list[],int vertex){
+    bool visited[vertex];
     memset(visited,false,sizeof(visited));
 
     //queue te push
-    queue<int>q;
+    queue<int>q;   //space complexity=O(V)
     q.push(src);
     visited[src]=true;
 
     //queue theke ber kore ana
 
-    while(!q.empty()){
+    while(!q.empty()){ // time complexity=O(v).vertex jotota q te totota push hbe .
         int par=q.front();
         q.pop();
         cout<<par<<" ";
 
        //queue niye kaj kora 
-       for(int child:adj_list[par]){
-         if(!visited[child]){
+       for(int child:adj_list[par]){  // time complexity=O(E).Edge jotota ototai operation hoi worst case e 
+         if(!visited[child]){   // ei condition er upor operation depend kortese
             q.push(child);
             visited[child]=true;
        }
@@ -28,14 +28,16 @@ void bfs(int src,vector<int> adj_list[],int node){
 
 }
 
+// overall bfs er time compleixty=O(V+E) .O(V) ar O(E) er modde nested relation na karon node jototai thakuk adjacency)list e  edge jotota totai operaton hbe.
+// bfs er time complexity =O(V)
 
 }
 
 int main()
 {
-  int node,edge;
-  cin>>node>>edge;
-  vector<int>adj_list[node];
+  int vertex,edge;
+  cin>>vertex>>edge;
+  vector<int>adj_list[vertex];
 
   while(edge--){
     int a,b;
@@ -43,7 +45,7 @@ int main()
     adj_list[a].push_back(b);
     adj_list[b].push_back(a);
   }
-  bfs(0,adj_list,node);
+  bfs(0,adj_list,vertex);
    
   return 0;
 }
