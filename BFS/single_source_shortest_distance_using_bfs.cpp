@@ -3,12 +3,14 @@ using namespace std;
 
 vector<int>adj_list[1005];
 bool visited[1005];
+int level[1005];
 
 void bfs(int src){
     
     queue<int>q;
     q.push(src);
     visited[src]=true;
+    level[src]=0;
 
     while(!q.empty()){
         int par=q.front();
@@ -20,10 +22,11 @@ void bfs(int src){
             if(!visited[child]){
                 q.push(child);
                 visited[child]=true;
+                level[child]=level[par]+1;
             }
         }
     }
-    cout<<endl;
+    
 }
 
 int main()
@@ -39,15 +42,24 @@ int main()
     adj_list[b].push_back(a);
 
   }
+
   memset(visited,false,sizeof(visited));
+  memset(level,-1,sizeof(level));
+
   int src,desti;
   cin>>src>>desti;
 
   bfs(src);
 
-  if(visited[desti])
-    cout<<"Yes, Visited from source vertex";
-  else
-    cout<<"No,not visited from source vertex";  
+
+
+   cout<<endl;
+
+
+    for(int i=0;i<vertex;i++){
+        cout<<i<<"-->"<<level[i]<<endl;
+    }  
+    
+    cout<<level[desti]<<endl;
   return 0;
 }

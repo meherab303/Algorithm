@@ -21,7 +21,7 @@ void bfs(int src,vector<int> adj_list[],int vertex){
         //oi vertex niye kaj
         cout<<par<<" ";
 
-       //children push kora
+       //children push
        for(int child:adj_list[par]){  // time complexity=O(E).Edge jotota ototai operation hoi worst case e .karon protita edge ekbar e travers hbe.
          if(!visited[child]){   // ei condition er upor operation depend kortese
             q.push(child);
