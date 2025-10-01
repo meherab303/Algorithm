@@ -11,15 +11,18 @@ void bfs(int src,vector<int> adj_list[],int vertex){
     q.push(src);
     visited[src]=true;
 
-    //queue theke ber kore ana
+    
 
     while(!q.empty()){ // time complexity=O(v).vertex jotota q te totota push hbe .
+       //queue theke ber kore ana
         int par=q.front();
         q.pop();
+
+        //oi vertex niye kaj
         cout<<par<<" ";
 
-       //queue niye kaj kora 
-       for(int child:adj_list[par]){  // time complexity=O(E).Edge jotota ototai operation hoi worst case e 
+       //children push kora
+       for(int child:adj_list[par]){  // time complexity=O(E).Edge jotota ototai operation hoi worst case e .karon protita edge ekbar e travers hbe.
          if(!visited[child]){   // ei condition er upor operation depend kortese
             q.push(child);
             visited[child]=true;
