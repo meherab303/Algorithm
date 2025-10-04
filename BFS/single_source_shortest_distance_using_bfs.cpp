@@ -56,10 +56,15 @@ int main()
    cout<<endl;
 
 
-    for(int i=0;i<vertex;i++){
-        cout<<i<<"-->"<<level[i]<<endl;
-    }  
+    // for(int i=0;i<vertex;i++){
+    //     cout<<i<<"-->"<<level[i]<<endl;
+    // }  
     
-    cout<<level[desti]<<endl;
+    
+    if(level[desti]==-1){
+        cout<<"impossible";
+    }else{
+        cout<<level[desti]<<endl;
+    }
   return 0;
 }

@@ -1,8 +1,10 @@
-bfs travers --> 0 1 4 3 5 2 
-0 parent-->-1
-1 parent-->0
-2 parent-->4
-3 parent-->1
-4 parent-->0
-5 parent-->1
-shortest route from source 0 to destination 2 is 0 4 2 
+1 2
+0 2
+2 2
+1 1
+0 1
+2 1
+1 0
+0 0
+2 0
+2

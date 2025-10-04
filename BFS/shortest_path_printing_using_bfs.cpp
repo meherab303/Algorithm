@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-vector<int>adj_list[1005];
-bool visited[1005];
-int level[1005];
-int parent[1005];
+const int N = 1005;
+vector<int>adj_list[N];
+bool visited[N];
+int level[N];
+int parent[N];
 
 void bfs(int src){
     
@@ -71,8 +71,17 @@ int main()
   reverse(path.begin(),path.end()); //reverse the path
 
   cout<<"shortest route from source "<<src<<" to destination "<<desti<<" is ";
-  for(int x:path){
-    cout<<x<<" ";
+  
+
+
+  if(level[desti]==-1){
+        cout<<"IMPOSSIBLE";
+        
+    }else{
+        cout<<path.size()<<endl;
+        for(int x:path){
+            cout<<x<<" ";
   }
+    }
   return 0;
 }
