@@ -21,7 +21,10 @@ void dfs(int si,int sj){
         int ci=si+child_val[i].first;
         int cj=sj+child_val[i].second;
 
-        if(valid(ci,cj) && !visited[ci][cj])
+        // cout<<ci<<" "<<cj<<endl;  //children
+
+        if(valid(ci,cj) && !visited[ci][cj])   //children valid kina check dite hobe karon max 4ta children thakbe .4tar theke kom o thakte pare.
+        
             dfs(ci,cj);
 
     }
